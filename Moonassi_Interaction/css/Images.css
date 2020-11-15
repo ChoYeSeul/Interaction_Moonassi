@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+
+  body {
+    width: 100%;
+    height: 4000px;
+    background-color: #1d1d1d;
+    color: white;
+    font-family: 'Poppins', sans-serif; 
+    animation: fadeout 1.6s alternate linear;
+  }
+
+  .container {
+    width: 33.33%;
+    height: 100vh;
+    float: left;
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    animation: FadeIn linear 0.8s forwards;
+  }
+
+  .image-container {
+    width: 30.6%;
+    position: fixed;
+    height: 200vh;
+    transform: translate(0px, 0px);
+    transition-duration: 0.6s;
+    /* transition-timing-function: cubic-bezier(0.04, 0.72, 0.09, 0.99); */
+  }
+
+  #image-container1 {
+    transform: translate(0px, -200%);
+  }
+  
+
+/* nav */
+
+body > .main > .nav {
+  position: fixed;
+  text-align: center;
+  margin : 0px;
+  background-color: #1d1d1d;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 0;
+  font-size: 1.4em;
+  z-index: 999999;
+  width: 100%;
+  height: 8%;
+}
+.logo{
+  color: white;
+}
+
+#menu{
+  display: inline;
+  position: absolute;
+  left: 15%;
+  top: 35%;
+}
+#overlay{
+  display: inline-block;
+  position: absolute;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  top: 40%;
+  z-index: 999999;
+  left: 7%;
+}
+nav > ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav > ul > li{
+  margin: 10% 0;
+  padding-bottom: 20px;
+  color: white;
+  margin-left: 150%;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  opacity: 1;
+  text-decoration: black;
+  color: burlywood;
+}
+.fadeInNav{
+  animation: fadeInNav 0.3s ease forwards;
+}
+@keyframes fadeInNav{
+  0%{
+      opacity: 0;
+      transform: translateX(-25%);
+  }
+  100%{
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+@keyframes fadeOut{
+  0%{
+      opacity: 100%;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+/* 햄버거 버튼 */
+#menuicon{display: none;}
+#menuicon + label {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor:pointer;
+}
+#menuicon + label  p{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 30px;
+  background-color: white;
+  transition: all 0.3s;
+  margin: 0;
+}
+#menuicon + label  p:nth-child(1){top: 0; opacity: 1;width: 80%;}
+#menuicon + label  p:nth-child(2){top: 50%; transform: translateY(-50%);}
+#menuicon + label  p:nth-child(3){bottom: 0;width: 80%;}
+#menuicon + label:hover  p:nth-child(1){width: 100%;}
+#menuicon + label:hover  p:nth-child(2){width: 80%;}
+#menuicon + label:hover  p:nth-child(3){width: 100%;}
+#menuicon:checked +label{z-index: 99;}
+#menuicon:checked +label p{background-color: #fff;}
+#menuicon:checked +label p:nth-child(1){top: 50%; transform: translateY(-50%) rotate(45deg);}
+#menuicon:checked +label p:nth-child(2){opacity: 0;}
+#menuicon:checked +label p:nth-child(3){bottom: 50%; transform: translateY(50%) rotate(-45deg);}
+#sidebar{
+  width: 300px;
+  height: 100%;
+  background-color: #616161;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 22; 
+  transition: all 0.3s; 
+  opacity: 0.9;
+}
+
+#menuicon:checked + label + div{left: 0;}
+
+
+#menuicon:checked + label + div{left: 0;}
+
+
+/* 마우스를 올리면 다른 이미지들을 볼 수 있도록 설정 */
+
+  .image:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0059P_Inspiration_2012_WEB.jpg');
+  }
+  .image1:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0070P_Random-access-memories_2013_WEB.jpg');
+  }
+  .image2:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0090P_Camouflage_2014_WEB.jpg');
+  }
+  .image3:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0101P_Being-for-others_2015_WEB.jpg');
+  }
+  .image4:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0102P_More-or-less_2015_WEB.jpg');
+  }
+  .image5:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0217P_Hug-in_2019_Web.jpg');
+  }
+  .image6:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0175P_Age_2017_WEB.jpg');
+  }
+  .image7:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0176P_Emptying-the-emptiness_2017_WEB.jpg');
+  }
+  .image8:hover{
+    background-image: url('../img/moregalley_img/MouseOver/0217P_Hug-in_2019_Web.jpg');
+  }
+
+  /* 기본 이미지 설정 */
+  .image {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0017P_Blanket-of-you_2009_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+
+  .image1 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0119FS-1_Secret7_All_2016_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+
+
+  .image2 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0126P_Creature-of-loneliness_2016_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+
+  .image3 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0127P_Creature-of-weakness_2016_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+  .image4 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0128P_Under-the-surface_2016_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+  .image5 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0129P_On-the-other-hands_2016_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+  .image6 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0010P_You-are-beyond-you_2009_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+  .image7 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0172P_Tree-was-there-swaying-in-the-wind-like-me_2017_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+  .image8 {
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    transition: 1s cubic-bezier(0.04, 0.72, 0.09, 0.99);
+    background-image: url('../img/moregalley_img/0003P_Hearing-hearing_2009_WEB.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+  }
+@keyframes FadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
